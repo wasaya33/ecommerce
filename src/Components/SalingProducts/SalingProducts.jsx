@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FiHeart } from 'react-icons/fi';
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
-import { HiArrowSmRight } from "react-icons/hi";
 
 const SalingProducts = () => {
   const products = [
@@ -11,25 +9,8 @@ const SalingProducts = () => {
     { id: 4, name: 'S-Series Comfort Chair', price: '$375', oldPrice: '$400', rating: 99, image: '/images/ComfortChair.png' },
   ];
 
-  const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 3, minutes: 23, seconds: 19 });
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prevTime) => {
-        let { days, hours, minutes, seconds } = prevTime;
-        if (seconds > 0) { seconds -= 1; }
-        else {
-          if (minutes > 0) { minutes -= 1; seconds = 59; }
-          else {
-            if (hours > 0) { hours -= 1; minutes = 59; seconds = 59; }
-            else { if (days > 0) { days -= 1; hours = 23; minutes = 59; seconds = 59; } }
-          }
-        }
-        return { days, hours, minutes, seconds };
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
+ 
 
   const carouselRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -64,16 +45,20 @@ const SalingProducts = () => {
       <div className="relative overflow-hidden mt-10">
         <div ref={carouselRef} className="flex space-x-6 overflow-x-auto scroll-smooth scrollbar-hide justify-center">
           {products.map((product) => (
-            <div key={product.id} className="p-4 rounded-lg shadow-md relative min-w-[250px] flex-shrink-0 flex flex-col items-center justify-center">
-              <FiHeart className="absolute top-2 right-2 cursor-pointer text-gray-500 hover:text-red-500" />
-              <img src={product.image} alt={product.name} className="w-full h-40 object-contain mb-4" />
-              <h3 className="text-sm font-semibold mb-2">{product.name}</h3>
+            <div key={product.id} className=" rounded-lg shadow-md relative min-w-[250px] flex-shrink-0 flex flex-col items-center justify-center">
+             <div className='bg-[#F5F5F5] w-[270px] h-[250px] rounded-[4px] flex items-center'>
+             <FiHeart className="absolute top-2 right-2 cursor-pointer text-gray-500 hover:text-red-500" />
+             <img src={product.image} alt={product.name} className="w-full h-40 object-contain " />
+             </div>
+             <div className='flex flex-col '>
+             <h3 className="text-sm font-semibold mb-2">{product.name}</h3>
               <p className="text-red-500 font-bold">
                 {product.price}<span className="text-gray-400 line-through ml-2">{product.oldPrice}</span>
               </p>
               <div className="flex items-center space-x-1 text-yellow-400 mt-2">
                 {'★★★★★'.slice(0, 5)}<span className="text-gray-500 text-xs">({product.rating})</span>
               </div>
+             </div>
             </div>
           ))}
         </div>

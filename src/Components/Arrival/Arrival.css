@@ -1,0 +1,27 @@
+.left_div {
+    background-image: url('/images/arrival_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.right_upper {
+    background-image: url('/images/arrival_2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bottom_left {
+    background-image: url('/images/arrival_3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bottom_right {
+    background-image: url('/images/arrival_4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -87,20 +87,24 @@ const FlashSales = () => {
           </button>
         </div>
       </div>
-      <div className="relative overflow-hidden">
-        <div ref={carouselRef} className="flex space-x-6 overflow-x-auto scroll-smooth scrollbar-hide">
+      <div className="relative  overflow-hidden">
+        <div ref={carouselRef} className=" flex space-x-6 overflow-x-auto scroll-smooth scrollbar-hide">
           {products.map((product) => (
-            <div key={product.id} className="p-4 rounded-lg shadow-md relative min-w-[250px] flex-shrink-0">
+            <div key={product.id} className="p-0 rounded-lg shadow-md relative min-w-[250px] flex-shrink-0">
+              <div className='bg-[#F5F5F5] w-[270px] h-[250px] rounded-[4px] flex items-center'>
               <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs rounded">{product.discount}</span>
               <FiHeart className="absolute top-2 right-2 cursor-pointer text-gray-500 hover:text-red-500" />
               <img src={product.image} alt={product.name} className="w-full h-40 object-contain mb-4" />
-              <h3 className="text-sm font-semibold mb-2">{product.name}</h3>
+              </div>
+             <div className=' pl-4 pb-2'>
+             <h3 className="text-sm font-semibold mb-2">{product.name}</h3>
               <p className="text-red-500 font-bold">
                 {product.price}<span className="text-gray-400 line-through ml-2">{product.oldPrice}</span>
               </p>
               <div className="flex items-center space-x-1 text-yellow-400 mt-2">
                 {'★★★★★'.slice(0, 5)}<span className="text-gray-500 text-xs">({product.rating})</span>
               </div>
+             </div>
             </div>
           ))}
         </div>

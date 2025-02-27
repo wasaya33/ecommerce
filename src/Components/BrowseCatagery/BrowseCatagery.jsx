@@ -25,7 +25,7 @@ const BrowseCatagery = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-10">
-      <div className="flex gap-2 text-center items-center">
+      <div className="flex gap-2  text-center items-center">
         <div className="ml-10 w-[20px] h-[40px] rounded-[4px] bg-red-500 mb-6">
           <span className=""></span>
         </div>
@@ -38,7 +38,7 @@ const BrowseCatagery = () => {
         <div className="flex items-center">
           <h2 className="text-2xl font-bold font-inter font-semibold text-4xl leading-[48px] tracking-[0.04em] pl-10">Browse By Category</h2>
         </div>
-        <div className="flex space-x-2 pr-10">
+        <div className="flex space-x-2  pr-10">
           <button onClick={() => scroll(-250)} className="bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 transition-colors">
             <HiOutlineArrowSmLeft />
           </button>
@@ -48,7 +48,7 @@ const BrowseCatagery = () => {
         </div>
       </div>
 
-      <div className="relative overflow-hidden">
+      <div className="relative  overflow-hidden">
         <div ref={carouselRef} className="flex items-center space-x-6 overflow-x-auto scroll-smooth scrollbar-hide">
           {products.map((product) => (
             <div
