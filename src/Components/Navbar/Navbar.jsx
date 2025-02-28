@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import "./../../../src/index.css";
 import { FiHeart, FiSearch, FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 
@@ -11,14 +12,14 @@ const Navbar = () => {
       <div className="bg-black flex justify-center items-center text-center">
         <p className="text-white py-2 font-poppins text-[14px] leading-[21px] font-normal tracking-[0%]">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!  
-          <a href="">  ShopNow</a>
+          <Link to="/shop" className="text-yellow-400 font-bold ml-1">Shop Now</Link>
         </p>
       </div>
 
       {/* Navbar */}
       <nav className="bg-white shadow-md p-4 pl-[6%] pr-[6%] flex justify-between items-center">
         {/* Logo */}
-        <h1 className="font-inter  text-[24px] leading-[24px] tracking-[0.03em] font-bold">Exclusive</h1>
+        <h1 className="font-inter text-[24px] leading-[24px] tracking-[0.03em] font-bold">Exclusive</h1>
 
         {/* Mobile Menu Button */}
         <button
@@ -34,10 +35,10 @@ const Navbar = () => {
             menuOpen ? "block" : "hidden lg:flex"
           }`}
         >
-          <li className="relative pb-2"><a href="#">Home</a></li>
-          <li><a href="#" className="hover:text-gray-600">Contact</a></li>
-          <li><a href="#" className="hover:text-gray-600">About</a></li>
-          <li><a href="#sign-up" className="hover:text-gray-600">Sign Up</a></li>
+          <li><Link to="/" className="hover:text-gray-600">Home</Link></li>
+          <li><Link to="/contact" className="hover:text-gray-600">Contact</Link></li>
+          <li><Link to="/about" className="hover:text-gray-600">About</Link></li>
+          <li><Link to="/signup" className="hover:text-gray-600">Sign Up</Link></li>
         </ul>
 
         {/* Search and Icons */}

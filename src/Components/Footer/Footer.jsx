@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-
+import QrCode from './../../../public/images/QrCode.png';
+import playStore from './../../../public/images/GooglePlay.png';
+import Appstore from './../../../public/images/AppStore.png';
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-10 px-4 md:px-20">
@@ -56,10 +58,10 @@ const Footer = () => {
           <h2 className="font-bold text-lg">Download App</h2>
           <p className="mt-2 text-sm text-gray-400">Save $3 with App New User Only</p>
           <div className="flex items-center space-x-2 mt-2">
-            <img src="/images/qrcode.png" alt="QR Code" className="w-14" />
+            <img src={QrCode} alt="QR Code" className="w-14" />
             <div className="flex flex-col space-y-1">
-              <img src="/images/googleplay.png" alt="Google Play" className="w-24" />
-              <img src="/images/appstore.png" alt="App Store" className="w-24" />
+              <img src={playStore} alt="Google Play" className="w-24" />
+              <img src={Appstore} alt="App Store" className="w-24" />
             </div>
           </div>
           {/* Social Icons */}
