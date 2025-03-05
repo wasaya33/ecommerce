@@ -53,7 +53,7 @@ const BrowseCatagery = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="p-4 border rounded-lg shadow-md relative min-w-[170px] flex-shrink-0 flex flex-col items-center justify-center" // .mmmm class is replaced here
+              className="p-4 border rounded-lg shadow-md relative min-w-[170px] flex-shrink-0 flex flex-col items-center justify-center" 
             >
               <img src={product.image} alt={product.name} className="w-full h-20 object-contain mb-4" />
               <p className="text-sm font-semibold mb-2">{product.name}</p>
